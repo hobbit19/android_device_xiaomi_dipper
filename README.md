@@ -1,34 +1,28 @@
-# android_device_xiaomi_polaris
-For building TWRP for Xiaomi Mi MIX 2S
+TWRP device tree for Xiaomi Mi 8
 
-TWRP device tree for Xiaomi MIX 2S
+All blobs are extracted from miui_MIMIX2S_8.10.11_13b40c2eee_9.0 firmware.
 
-Kernel and all blobs are extracted from miui_MIMIX2S_8.10.11_13b40c2eee_9.0 firmware.
+The Xiaomi Mi 8 (codenamed _"dipper"_) is a high-end smartphone from Xiaomi.
 
-The Xiaomi Mi MIX 2S (codenamed _"polaris"_) are high-end smartphones from Xiaomi.
-
-Xiaomi Mi MIX 2S was announced and released in April 2018.
+It was announced in May 2018. Release date was June 2018.
 
 ## Device specifications
 
-| Device       | Xiaomi Mi MIX 2S                                |
-| -----------: | :---------------------------------------------- |
-| SoC          | Qualcomm SDM845 Snapdragon 845                  |
-| CPU          | 8x Qualcomm® Kryo™ 385 up to 2.8GHz             |
-| GPU          | Adreno 630                                      |
-| Memory       | 6GB / 8GB RAM (LPDDR4X)                         |
-| Shipped Android version | 8.0                                  |
-| Storage      | 64GB / 128GB / 256GB UFS 2.1 flash storage      |
-| Battery      | Non-removable Li-Po 3400 mAh                    |
-| Dimensions   | 150.86 x 74.9 x 8.1 mm                          |
-| Display      | 2160 x 1080 (18:9), 5.99 inch                   |
-| Rear camera 1 | 12MP, f/1.8 Dual LED flash                     |
-| Rear camera 2 | 12MP, f/2.4                                    |
-| Front camera | 5MP, 1-micron pixels, f/2.2 1080p 30 fps video  |
+Basic   | Spec Sheet
+-------:|:-------------------------
+SoC     | Qualcomm SDM845 Snapdragon 845
+CPU     | Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.8 GHz Kryo 385 Silver)
+GPU     | Adreno 630
+Memory  | 6 GB RAM
+Shipped Android Version | 8.1 with MIUI 9.5
+Storage | 64/128/256 GB
+Battery | Non-removable Li-Ion 3400 mAh battery
+Display | 1080 x 2248 pixels, 18:9 ratio, 6.21 inches, Super AMOLED (~402 ppi density)
+Camera  | Dual 12 MP, 4-axis OIS, 2x optical zoom, dual PDAF, dual-LED (dual tone) flash
 
 ## Device picture
 
-![Xiaomi Mi MIX 2S](https://i1.mifile.cn/f/i/2018/mix2s/specs/black.png?1)
+![Xiaomi Mi 8](https://cdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-mi8-2.jpg)
 
 ## Features
 
@@ -57,25 +51,25 @@ repo sync
 Then add these projects to .repo/manifest.xml:
 
 ```xml
-<project path="device/xiaomi/polaris" name="TeamWin/android_device_xiaomi_polaris" remote="github" revision="android-9.0" />
+<project path="device/xiaomi/dipper" name="TeamWin/android_device_xiaomi_dipper" remote="github" revision="android-9.0" />
 ```
 
 Finally execute these:
 
 ```
 . build/envsetup.sh
-lunch omni_polaris-eng
+lunch omni_dipper-eng
 mka recoveryimage ALLOW_MISSING_DEPENDENCIES=true # Only if you use minimal twrp tree.
 ```
 
 To test it:
 
 ```
-fastboot boot out/target/product/polaris/recovery.img
+fastboot boot out/target/product/dipper/recovery.img
 ```
 ## Contributors
 
-[Here](https://github.com/TeamWin/android_device_xiaomi_polaris/graphs/contributors)
+[Here](https://github.com/TeamWin/android_device_xiaomi_dipper/graphs/contributors)
 
 ## Thanks
 
@@ -86,3 +80,5 @@ fastboot boot out/target/product/polaris/recovery.img
 - @timesleader for dipper TWRP tree used for adb works:[android_device_xiaomi_dipper](https://github.com/timesleader/android_device_xiaomi_dipper)
 
 - @wuxianlin for enchilada TWRP tree used for init.rc works:[android_device_oneplus_enchilada](https://github.com/TeamWin/android_device_oneplus_enchilada)
+
+- @notsyncing for polaris TWRP tree used as base: [android_device_oneplus_enchilada](https://github.com/notsyncing/android_device_xiaomi_polaris)
